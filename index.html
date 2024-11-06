@@ -1,1 +1,68 @@
-<a href="intent://arvr.google.com/scene-viewer/1.0?title=My+test&file=https%3A%2F%2Fraw.githubusercontent.com%2FKhronosGroup%2FglTF-Sample-Assets%2Fmain%2FModels%2FEmissiveStrengthTest%2FglTF-Binary%2FEmissiveStrengthTest.glb&mode=ar_preferred&#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;end;">View in AR</a>
+<html>
+
+<head>
+    <title>AR Viewer</title>
+</head>
+
+<body>
+    v4
+    <script>
+        const gltfRoot = "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/";
+
+        const models = [
+            {
+                name: "EmissiveStrengthTest",
+                image: "EmissiveStrengthTest/screenshot/screenshot-x150.jpg",
+                file: "EmissiveStrengthTest/glTF-Binary/EmissiveStrengthTest.glb"
+            },
+            {
+                name: "CarbonFibre",
+                image: "CarbonFibre/screenshot/screenshot_large.jpg",
+                file: "CarbonFibre/glTF-Binary/CarbonFibre.glb",
+            },
+            {
+                name: "AnisotropyBarnLamp",
+                image: "AnisotropyBarnLamp/screenshot/screenshot_Large.jpg",
+                file: "AnisotropyBarnLamp/glTF-Binary/AnisotropyBarnLamp.glb",
+            },
+            {
+                name:"AnisotropyTest",
+                image:"AnisotropyDiscTest/screenshot/screenshot_Large.jpg",
+                file:"AnisotropyDiscTest/glTF-Binary/AnisotropyDiscTest.glb",
+            }
+        ]
+
+
+        function makeIntent(title, file) {
+            return `intent://arvr.google.com/scene-viewer/1.0?` + 
+                `title=${title}&` + 
+                `file=${file}&` + 
+                `mode=ar_preferred&`+
+                `#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;end;`;
+        }
+
+        const table = document.createElement("table");
+        document.body.appendChild(table);
+
+        const headerRow = table.createTHead().insertRow()
+        headerRow.insertCell().innerHTML = "Name";
+        headerRow.insertCell().innerHTML = "Image";
+        headerRow.insertCell().innerHTML = "Link";
+
+        const tbody = table.createTBody();
+
+        for (const model of models) {
+            const tr = tbody.insertRow();
+            tr.insertCell().innerHTML = model.name;
+            tr.insertCell().innerHTML = `<img src="${gltfRoot}${model.image}" style="width:100px;height:100px">`;
+            const link = tr.insertCell().appendChild(document.createElement("a"));
+            link.href = makeIntent(model.name, gltfRoot + model.file);
+            link.text = "View in AR";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
