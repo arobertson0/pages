@@ -31,31 +31,23 @@ function Viewer() {
 }
 
 function Hosts() {
-  const knownHosts = [
-    "http://localhost:5174/",
-    "http://10.255.255.254:5174/",
-    "http://172.20.103.242:5174/",
-  ];
+  const currentUrl = window.location.href;
+
   const HostList = lazy(async () => {
-    const hostElements: JSX.Element[] = [];
+    const hostImage = await toDataURL(currentUrl, {
+      color: { light: "#222", dark: "#eee" },
+      margin: 0,
+      scale: 8,
+    });
 
-    for (const host of knownHosts) {
-      const hostImage = await toDataURL(host, {
-        color: { light: "#222", dark: "#eee" },
-        margin: 0,
-        scale: 8,
-      });
-      hostElements.push(
-        <li>
-          <a className="host-list" href={host}>
-            {host}
-            <img src={hostImage} />
-          </a>
-        </li>
-      );
-    }
-
-    return () => <>{hostElements}</>;
+    return () => (
+      <li>
+        <a className="host-list" href={currentUrl}>
+          {currentUrl}
+          <img src={hostImage} />
+        </a>
+      </li>
+    );
   });
 
   return (
