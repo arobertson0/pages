@@ -1,12 +1,12 @@
-
-
 .logo {
   height: 6em;
   padding: 1.5em;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.preact:hover {
   filter: drop-shadow(0 0 2em #673ab8aa);
 }
@@ -19,18 +19,26 @@
   color: #888;
 }
 
-.host-list{
+.column {
   display: flex;
   flex-direction: column;
 
-  > img{
-    align-self: start;
-  }
+
 }
 
-.cols{
+
+img {
+  align-self: start;
+}
+
+.row {
   display: flex;
   flex-direction: row;
 
   justify-content: space-around;
+}
+
+.filechoose {
+  display: flex;
+  flex-direction: column;
 }
