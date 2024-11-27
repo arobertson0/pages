@@ -8,7 +8,7 @@
     "build": "rm -rf dist && tsc -b && vite build",
     "prepare": "npm run usdzip && npm run check && npm run known && npm run version && npm run build",
     "preview": "vite preview",
-    "check": "usdchecker files/DartmoorTOP_a.usdz > tk_check.log || true ",
+    "check": "usdchecker files/DartmoorTOP_a.*.usdz > tk_check.log || true ",
     "known": "node scripts/known.mjs",
     "usdzip": "node scripts/usdzip.mjs",
     "version": "node scripts/version.mjs"

@@ -22,8 +22,10 @@ for (const ent of ents) {
     continue;
   }
 
+  await exec(`rm -f ${ent.name}.*.usdz`, { cwd: filesDir });
+
   const mainFile = usdaFile;
-  const zipname = `${ent.name}.usdz`;
+  const zipname = `${ent.name}.${Math.random().toString(36).substring(2)}.usdz`;
   const zipPath = path.resolve(filesDir, zipname);
   await exec(`usdzip -a ${path.resolve(usdDir, mainFile)} ${zipPath}`);
 }
