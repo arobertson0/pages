@@ -16,6 +16,7 @@ def Scope "Everything" (
     {
         def Material "Dartmoor24TopShelfNightstandBackPanel"
         {
+            token inputs:UV0:varname = "st1"
             token outputs:surface.connect = </Everything/MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/PBR.outputs:surface>
 
             def Shader "PBR"
@@ -35,6 +36,7 @@ def Scope "Everything" (
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:default = (0, 0)
                 token inputs:varname = "st1"
+                token inputs:varname.connect = </Everything/MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel.inputs:UV0:varname>
                 float2 outputs:result
             }
 
