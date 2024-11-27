@@ -22,21 +22,21 @@ for (const ent of ents) {
     continue;
   }
 
-  const usdcFile = usdaFile.replace(".usda", ".usdc");
+  // const usdcFile = usdaFile.replace(".usda", ".usdc");
 
-  // 1. Run usdcat to convert usda to usdc
-  const usdaPath = path.join(usdDir, usdaFile);
-  const usdaBackupPath = path.join(filesDir, usdaFile);
+  // // 1. Run usdcat to convert usda to usdc
+  // const usdaPath = path.join(usdDir, usdaFile);
 
-  console.log(`Converting ${usdaFile} to ${usdcFile}`);
-  await exec(`usdcat -o ${usdcFile} ${usdaFile}`, { cwd: usdDir });
-  // 2. Move original usda to parent directory
-  console.log(`Moving ${usdaPath} to ${usdaFile}`);
-  await fs.rename(usdaPath, usdaBackupPath);
+  // console.log(`Converting ${usdaFile} to ${usdcFile}`);
+  // await exec(`usdcat -o ${usdcFile} ${usdaFile}`, { cwd: usdDir });
+  // // 2. Move original usda to parent directory
+  // const usdaBackupPath = path.join(filesDir, usdaFile);
+  // console.log(`Moving ${usdaPath} to ${usdaFile}`);
+  // await fs.rename(usdaPath, usdaBackupPath);
 
   // 3. Zip the directory
   const zipEntries = await fs.readdir(usdDir);
-  const mainFile = usdcFile;
+  const mainFile = usdaFile;
   const secondaryFiles = zipEntries.filter((e) => e !== mainFile);
 
   const zipfilesList = [mainFile, ...secondaryFiles]
@@ -47,10 +47,10 @@ for (const ent of ents) {
   const zipPath = path.resolve(filesDir, zipname);
   await exec(`usdzip -r ${zipPath} ${zipfilesList}`, { cwd: usdDir });
 
-  // 4. Move the usda files back to the directory
-  console.log(`Moving ${usdaBackupPath} to ${usdaPath}`);
-  await fs.rename(usdaBackupPath, usdaPath);
-  // 5. Remove the usdc files
-  console.log(`Removing ${usdcFile} in ${usdDir}`);
-  await fs.unlink(path.join(usdDir, usdcFile));
+  // // 4. Move the usda files back to the directory
+  // console.log(`Moving ${usdaBackupPath} to ${usdaPath}`);
+  // await fs.rename(usdaBackupPath, usdaPath);
+  // // 5. Remove the usdc files
+  // console.log(`Removing ${usdcFile} in ${usdDir}`);
+  // await fs.unlink(path.join(usdDir, usdcFile));
 }
