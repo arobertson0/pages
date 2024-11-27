@@ -58,7 +58,9 @@ function Viewer({ file }: ViewerProps) {
   if (file === null) return "No file selected";
 
   const fileName = typeof file === "number" ? knownFiles[file] : file;
-  const href = `${fileRoot}/${fileName}`;
+  const href = `${fileRoot}/${fileName}?r=${Math.random()
+    .toString(36)
+    .substring(2)}`;
   return (
     <a className="column" rel="ar" href={href}>
       View in AR
