@@ -1,7 +1,5 @@
-import child from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
-import {} from "node:zlib";
 
 const filesDir = "files/";
 const filesPath = path.resolve(filesDir);

@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "npm run usdzip && npm run known && rm -rf dist &&  tsc -b && vite build",
+    "build": "rm -rf dist && tsc -b && vite build",
+    "prepare": "npm run usdzip && npm run known && npm run version && npm run build",
     "preview": "vite preview",
+    "known": "node scripts/known.mjs",
     "usdzip": "node scripts/usdzip.mjs",
-    "known": "node scripts/known.mjs"
+    "version": "node scripts/version.mjs"
   },
   "dependencies": {
     "preact": "^10.25.0",

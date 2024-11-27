@@ -4,6 +4,7 @@ import { Suspense, lazy, useCallback, useState } from "preact/compat";
 
 import { toDataURL } from "qrcode";
 import { knownFiles } from "./knownFiles";
+import version from "./version.json";
 
 type Value = null | number | string;
 
@@ -32,7 +33,7 @@ export function App() {
 
   return (
     <div>
-      <h1>USDZ test page</h1>
+      <h1>USDZ test page v{version}</h1>
       <div className="row">
         <div>
           <h2>Files</h2>
