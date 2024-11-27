@@ -3,3 +3,4 @@
     - Is it possible that some "option" stays stuck between meshes?
 - Strangely, It may have been the removing of materials that fixed it.
     - Resetting to previous file version, meshes are now amgenta, but correct shape.
+- Having a single mesh with all materials in scene still breaks.
