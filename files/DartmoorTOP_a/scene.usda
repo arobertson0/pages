@@ -2,7 +2,7 @@
 (
     metersPerUnit = 1
     upAxis = "Y"
-    # added defaultPrim to fix Stage has missing or invalid defaultPrim. (fails 'StageMetadataChecker')
+    # added defaultPrim to fix Stage has missing or invalid defaultPrim. (fails 'StageMetadataChecker'), did not solve
     defaultPrim = "Scenes"
 )
 
@@ -40,38 +40,40 @@ def Scope "MaterialLibrary" (
             uniform token info:id = "UsdUVTexture"
             asset inputs:file = @Ash_French_Milled_BaseMap.jpg@
             float4 inputs:scale = (1, 1, 1, 1)
-            float2 inputs:st.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/baseMap/Xform.outputs:result>
+            float2 inputs:st.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/baseMap_Xform.outputs:result>
             token inputs:wrapS = "repeat"
             token inputs:wrapT = "repeat"
             float3 outputs:rgb
-
-            def Shader "Xform"
-            {
-                uniform token info:id = "UsdTransform2d"
-                float2 inputs:in.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/UV0.outputs:result>
-                float2 inputs:scale = (0.025, 0.025)
-                float2 inputs:translation = (-0.2, 0.2)
-                float2 outputs:result
-            }
+        }
+            
+        # Move to fix PrimEncapsulationChecker
+        def Shader "baseMap_Xform"
+        {
+            uniform token info:id = "UsdTransform2d"
+            float2 inputs:in.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/UV0.outputs:result>
+            float2 inputs:scale = (0.025, 0.025)
+            float2 inputs:translation = (-0.2, 0.2)
+            float2 outputs:result
         }
 
         def Shader "roughnessMap"
         {
             uniform token info:id = "UsdUVTexture"
             asset inputs:file = @GEN_0..jpg@
-            float2 inputs:st.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/roughnessMap/Xform.outputs:result>
+            float2 inputs:st.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/roughnessMap_Xform.outputs:result>
             token inputs:wrapS = "repeat"
             token inputs:wrapT = "repeat"
             float outputs:g
+        }
 
-            def Shader "Xform"
-            {
-                uniform token info:id = "UsdTransform2d"
-                float2 inputs:in.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/UV0.outputs:result>
-                float2 inputs:scale = (0.025, 0.025)
-                float2 inputs:translation = (-0.2, 0.2)
-                float2 outputs:result
-            }
+        # Move to fix PrimEncapsulationChecker
+        def Shader "roughnessMap_Xform"
+        {
+            uniform token info:id = "UsdTransform2d"
+            float2 inputs:in.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/UV0.outputs:result>
+            float2 inputs:scale = (0.025, 0.025)
+            float2 inputs:translation = (-0.2, 0.2)
+            float2 outputs:result
         }
     }
 

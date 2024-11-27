@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite --host",
     "build": "rm -rf dist && tsc -b && vite build",
-    "prepare": "npm run usdzip && npm run known && npm run version && npm run build",
+    "prepare": "npm run usdzip && npm run check && npm run known && npm run version && npm run build",
     "preview": "vite preview",
+    "check": "usdchecker files/DartmoorTOP_a.usdz > tk_check.log || true ",
     "known": "node scripts/known.mjs",
     "usdzip": "node scripts/usdzip.mjs",
     "version": "node scripts/version.mjs"
