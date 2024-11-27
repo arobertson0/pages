@@ -15,3 +15,4 @@
     - Manually connecting st1 did no work
     - Removing map transforms did not work
     - Removing maps did not work
+    - Clearing the material properties (except color) did not work
