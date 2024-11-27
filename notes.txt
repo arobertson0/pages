@@ -19,3 +19,8 @@
     - Setting all default properties made it invisible...
         - My error, I made `opacityThreshold = 1.0` instead of 0.0
     - After fixing opacityThreshold, did not work
+- Success on iteration 51, after much  mucking about, setting the geometry to have "uniform token subdivisionScheme = "none"" is what solves this
+    - It would seem that previosuly, apple did not have subdivision enabled.
+
+Next up, we investigate the material issues
+
