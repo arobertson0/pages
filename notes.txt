@@ -23,4 +23,4 @@
     - It would seem that previosuly, apple did not have subdivision enabled.
 
 Next up, we investigate the material issues
-
+- Fixing the defaultPrim and MaterialBindingAPI did not solve
