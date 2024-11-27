@@ -187,7 +187,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandBackPanel"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandBackPanelMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -210,7 +210,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandScrews"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandScrewsMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -236,7 +236,7 @@ def Scope "Scenes" (
                         uniform token[] xformOpOrder = ["xformOp:translate"]
 
                         def Mesh "Dartmoor24TopShelfNightstandVOIDMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -255,7 +255,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandHandmadeStamp"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandHandmadeStampMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -278,7 +278,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandPulls"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandPullsMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -301,7 +301,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandDrawers"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandDrawersMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -324,7 +324,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandBody"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandBodyMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
@@ -347,7 +347,7 @@ def Scope "Scenes" (
                     def Xform "Dartmoor24TopShelfNightstandSignature"
                     {
                         def Mesh "Dartmoor24TopShelfNightstandSignatureMesh"(
-                            # Added to fix MaterialBindingAPIAppliedChecker
+                            # Added to fix MaterialBindingAPIAppliedChecker, did not solve
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
