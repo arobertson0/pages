@@ -8,3 +8,4 @@
     - Maybe it's the `displacement` being connected to phantom data?
     - Setting displacement to 0 did not work
     - Removing displcement connection did not work
+    - removing the displacement out did not work.
