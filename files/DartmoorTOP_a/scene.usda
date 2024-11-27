@@ -21,10 +21,7 @@ def Scope "Everything" (
             def Shader "PBR"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                float inputs:clearcoat = 0.03
-                float inputs:clearcoatRoughness = 0.5
-                float inputs:ior = 1.6
-                normal3f inputs:normal
+                color3f inputs:diffuseColor = (0.90, 0.10, 0.90)
                 token outputs:surface
             }
         }

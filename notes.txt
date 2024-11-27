@@ -14,3 +14,4 @@
     - Wrapping materials+scene in a mega-scope did not work
     - Manually connecting st1 did no work
     - Removing map transforms did not work
+    - Removing maps did not work
