@@ -10,3 +10,4 @@
     - Removing displcement connection did not work
     - removing the displacement out did not work.
     - Manually setting normals input did not work
+    - Renaming UV input did not work
