@@ -12,3 +12,4 @@
     - Manually setting normals input did not work
     - Renaming UV input did not work
     - Wrapping materials+scene in a mega-scope did not work
+    - Manually connecting st1 did no work
