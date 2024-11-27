@@ -2,6 +2,8 @@
 (
     metersPerUnit = 1
     upAxis = "Y"
+    # added defaultPrim to fix Stage has missing or invalid defaultPrim. (fails 'StageMetadataChecker')
+    defaultPrim = "Scenes"
 )
 
 def Scope "MaterialLibrary" (
