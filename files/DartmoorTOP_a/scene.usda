@@ -28,7 +28,7 @@ def Scope "Everything" (
                 float inputs:clearcoat = 0.0
                 float inputs:clearcoatRoughness = 0.01
                 float inputs:opacity = 1.0
-                float inputs:opacityThreshold = 1.0
+                float inputs:opacityThreshold = 0.0
                 float inputs:ior = 1.5
                 normal3f inputs:normal = (0.0, 0.0, 1.0)
                 float inputs:displacement = 0.0

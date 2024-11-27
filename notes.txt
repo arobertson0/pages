@@ -16,3 +16,5 @@
     - Removing map transforms did not work
     - Removing maps did not work
     - Clearing the material properties (except color) did not work
+    - Setting all default properties made it invisible...
+        - My error, I made `opacityThreshold = 1.0` instead of 0.0
