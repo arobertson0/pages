@@ -6,7 +6,7 @@ import { promisify } from "node:util";
 const exec = promisify(child.exec);
 
 const filesDir = "files/";
-const filesPath = path.resolve(filesDir);
+const filesPath = filesDir;
 
 const ents = await fs.readdir(filesPath, { withFileTypes: true });
 
@@ -31,9 +31,15 @@ for (const ent of ents) {
   }
 
   // 3. Zip the directory
+  const zipEntries = await fs.readdir(dirPath);
   const zipname = `${ent.name}.usdz`;
   const zipPath = path.resolve(filesPath, zipname);
-  await exec(`usdzip -r ${zipPath} ${dirPath}`);
+  await exec(
+    `usdzip -r ${zipPath} ${zipEntries
+      .map((e) => `'${e.replaceAll("'", `'"'"'`)}'`)
+      .join(" ")}`,
+    { cwd: dirPath }
+  );
 
   for (const usdaFile of usdaFiles) {
     const usdaPath = path.resolve(dirPath, usdaFile);
