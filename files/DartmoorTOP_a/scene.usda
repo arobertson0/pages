@@ -46,7 +46,7 @@ def Scope "MaterialLibrary" (
             float3 outputs:rgb
         }
             
-        # Move to fix PrimEncapsulationChecker
+        # Move to fix PrimEncapsulationChecker, did not solve
         def Shader "baseMap_Xform"
         {
             uniform token info:id = "UsdTransform2d"
@@ -66,7 +66,7 @@ def Scope "MaterialLibrary" (
             float outputs:g
         }
 
-        # Move to fix PrimEncapsulationChecker
+        # Move to fix PrimEncapsulationChecker, did not solve
         def Shader "roughnessMap_Xform"
         {
             uniform token info:id = "UsdTransform2d"
@@ -186,7 +186,10 @@ def Scope "Scenes" (
                 {
                     def Xform "Dartmoor24TopShelfNightstandBackPanel"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandBackPanelMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandBackPanelMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.295275, 0.066675, -0.263525), (0.295275, 0.7159625, -0.25796872)]
                             int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
@@ -206,7 +209,10 @@ def Scope "Scenes" (
 
                     def Xform "Dartmoor24TopShelfNightstandScrews"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandScrewsMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandScrewsMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.29368752, 0.06826248, -0.26390597), (0.29368752, 0.714375, -0.26352498)]
                             int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
@@ -229,7 +235,10 @@ def Scope "Scenes" (
                         double3 xformOp:translate = (0, 0, 0.019999999552965164)
                         uniform token[] xformOpOrder = ["xformOp:translate"]
 
-                        def Mesh "Dartmoor24TopShelfNightstandVOIDMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandVOIDMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.2964823, 0.0682625, 0.21123277), (0.2964823, 0.5072064, 0.21123277)]
                             int[] faceVertexCounts = [4, 4]
@@ -245,7 +254,10 @@ def Scope "Scenes" (
 
                     def Xform "Dartmoor24TopShelfNightstandHandmadeStamp"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandHandmadeStampMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandHandmadeStampMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.21753542, 0.6143625, -0.26357263), (-0.14441459, 0.6396603, -0.26357263)]
                             int[] faceVertexCounts = [12, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 15, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 12, 4, 10, 8, 12, 12, 38, 70, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
@@ -265,7 +277,10 @@ def Scope "Scenes" (
 
                     def Xform "Dartmoor24TopShelfNightstandPulls"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandPullsMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandPullsMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.1143, 0.27940002, 0.22145626), (0.11429998, 0.49450624, 0.26431876)]
                             int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
@@ -285,7 +300,10 @@ def Scope "Scenes" (
 
                     def Xform "Dartmoor24TopShelfNightstandDrawers"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandDrawersMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandDrawersMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.282575, 0.08016875, 0.22145626), (0.2825737, 0.49450624, 0.24050626)]
                             int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
@@ -305,7 +323,10 @@ def Scope "Scenes" (
 
                     def Xform "Dartmoor24TopShelfNightstandBody"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandBodyMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandBodyMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.3048, -4.9960036e-16, -0.26431876), (0.3048, 0.7254875, 0.24368125)]
                             int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
@@ -325,7 +346,10 @@ def Scope "Scenes" (
 
                     def Xform "Dartmoor24TopShelfNightstandSignature"
                     {
-                        def Mesh "Dartmoor24TopShelfNightstandSignatureMesh"
+                        def Mesh "Dartmoor24TopShelfNightstandSignatureMesh"(
+                            # Added to fix MaterialBindingAPIAppliedChecker
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
                         {
                             float3[] extent = [(-0.26553988, 0.5763999, -0.26950192), (-0.11028479, 0.6111771, -0.26950192)]
                             int[] faceVertexCounts = [4]
