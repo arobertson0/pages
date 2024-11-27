@@ -6,5 +6,5 @@
 - Having a single mesh with all materials in scene still breaks.
 - One mesh one mat, still fucky
     - Maybe it's the `displacement` being connected to phantom data?
-    - Setting dispalcement to 0 did not work
-    
+    - Setting displacement to 0 did not work
+    - Removing displcement connection did not work
