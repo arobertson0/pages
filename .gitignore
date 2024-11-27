@@ -24,3 +24,6 @@ dist-ssr
 
 # OS file
 *:Zone.Identifier
+
+# Work forlders
+files/*/*

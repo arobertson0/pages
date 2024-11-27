@@ -3,12 +3,12 @@ import "./app.less";
 import { Suspense, lazy, useCallback, useState } from "preact/compat";
 
 import { toDataURL } from "qrcode";
+import { knownFiles } from "./knownFiles";
 
 type Value = null | number | string;
 
 const fileRoot =
   "https://github.com/arobertson0/pages/raw/refs/heads/main/files";
-const knownFiles = ["DartmoorTOP.usdz"];
 
 function parseValue(v: string): Value {
   if (v === "null") return null;
