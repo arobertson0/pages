@@ -23,6 +23,7 @@ def Scope "MaterialLibrary" (
             color3f inputs:diffuseColor.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/baseMap.outputs:rgb>
             float inputs:ior = 1.6
             float inputs:roughness.connect = </MaterialLibrary/Dartmoor24TopShelfNightstandBackPanel/roughnessMap.outputs:g>
+            float inputs:displacement = 0.0
             token outputs:displacement
             token outputs:surface
         }
