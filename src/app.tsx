@@ -35,16 +35,16 @@ export function App() {
       <h1>USDZ test page</h1>
       <div className="row">
         <div>
+          <h2>Files</h2>
+          <Files value={file} onChange={setFile} />
+        </div>
+        <div>
           <h2>Viewer</h2>
           <Viewer file={file} />
         </div>
         <div>
           <h2>QR</h2>
           <QR />
-        </div>
-        <div>
-          <h2>Files</h2>
-          <Files value={file} onChange={setFile} />
         </div>
       </div>
     </div>
