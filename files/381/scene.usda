@@ -2,6 +2,7 @@
 (
     metersPerUnit = 1
     upAxis = "Y"
+    defaultPrim = "Scenes"
 )
 
 def Scope "MaterialLibrary"
@@ -78,7 +79,9 @@ def Scope "Scenes" (
                     double3 xformOp:translate = (-8.989278793334961, 17.37381362915039, -16.808069229125977)
                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
 
-                    def Mesh "WhitePlastic3Mesh"
+                    def Mesh "WhitePlastic3Mesh"(
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
                     {
                         float3[] extent = [(-2.473217, 17.108255, 17.541605), (27.434422, 19.58249, 20.86393)]
                         int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 3, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
