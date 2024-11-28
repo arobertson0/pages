@@ -25,7 +25,7 @@
 Next up, we investigate the material issues
 - Fixing the defaultPrim and MaterialBindingAPI did not solve
 - Setting  subdivisionScheme = "none" did fix.
-- Next up, can manuakl binding of material inputs also fix?
+- Manually binding material inputs did not work.
 
 
 Code is in https://gitlab.com/threekit/libs/addons/-/blob/main/usdz-writer/core/private/mesh.cpp
