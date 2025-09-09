@@ -2,6 +2,7 @@
 export const knownFiles = [
   "adec-381-fix.usdz",
   "adec-381-fts.usdz",
+  "apple_vision_pro_ios16.usda",
   "apple_vision_pro_ios16.usdz",
   "dartmoor-fix.usdz",
   "dartmoor-preview.usdz"

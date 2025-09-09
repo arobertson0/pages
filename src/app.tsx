@@ -71,7 +71,9 @@ function Viewer({ file }: ViewerProps) {
 }
 
 function QR() {
-  const currentUrl = window.location.href;
+  const currentUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(
+    "https://preview.threekit.com/api/files/5715ce1d-3e77-4328-9100-510b5edb1e9f/content"
+  )}&mode=3d_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;`;
 
   const HostList = lazy(async () => {
     const hostImage = await toDataURL(currentUrl, {
